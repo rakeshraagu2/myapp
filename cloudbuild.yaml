@@ -4,7 +4,7 @@ steps:
       - build
       - '-t'
       - >-
-        asia-south1-docker.pkg.dev/k8s:${SHORT_SHA}
+        asia-south1-docker.pkg.dev/k8s:v1
       - '-f'
       - Dockerfile
       - .
@@ -12,11 +12,11 @@ steps:
     args:
       - push
       - >-
-        asia-south1-docker.pkg.dev/k8s:${SHORT_SHA}
+        asia-south1-docker.pkg.dev/k8s:v1
 timeout: 3600s
 images:
   - >-
-    asia-south1-docker.pkg.dev/k8s:${SHORT_SHA}
+    asia-south1-docker.pkg.dev/k8s:v1
 
 logsBucket: 'ci-cd-k8s'
 
