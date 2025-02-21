@@ -20,6 +20,6 @@ images:
 
 logsBucket: '${_LOGS_BUCKET_NAME}'
 options:
-  logging: GCS_ONL
+  logging: CLOUD_LOGGING_ONLY / NONE
 
     #test1
