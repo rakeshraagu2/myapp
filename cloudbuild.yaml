@@ -18,4 +18,8 @@ images:
   - >-
     asia-south1-docker.pkg.dev/k8s:${SHORT_SHA}
 
+logsBucket: '${_LOGS_BUCKET_NAME}'
+options:
+  logging: GCS_ONL
+
     #test1
