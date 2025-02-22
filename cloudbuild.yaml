@@ -19,7 +19,6 @@ timeout: 3600s
 images:
   - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
 
-# Step 3: Update the Kubernetes deployment
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
     - 'set'
