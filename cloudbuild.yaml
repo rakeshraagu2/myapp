@@ -26,7 +26,7 @@ images:
     - 'image'
     - 'deployment/k8s-test1'
     - 'k8s-test1=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
-  env:
+    env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-f'
     - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
 
