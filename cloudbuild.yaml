@@ -19,15 +19,4 @@ timeout: 3600s
 images:
   - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
 
-# Step 3: Update the Kubernetes deployment
-- name: 'gcr.io/cloud-builders/kubectl'
-  args:
-    - 'set'
-    - 'image'
-    - 'deployment/k8s-test1'
-    - 'k8s-test1=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
-    env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-f'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
-
 logsBucket: 'ci-cd-k8s'
