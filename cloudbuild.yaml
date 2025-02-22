@@ -28,7 +28,7 @@ logsBucket: 'ci-cd-k8s'
   - 'set'
   - 'image'
   - 'deployment/k8s-test1'
-  - 'nginx-custom=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
+  - 'k8s-test1=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-f'
   - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
