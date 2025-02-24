@@ -6,7 +6,7 @@ build:
   local: {}
 manifests:
   rawYaml:
-    - ./kubernetes/*
+    - ./k8s.yaml*
 deploy:
   kubectl: {}
   logs:
