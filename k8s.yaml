@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$SHORT_SHA'
+          image: 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:${SHORT_SHA}'
           ports:
             - containerPort: 80
 
