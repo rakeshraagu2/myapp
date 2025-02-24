@@ -27,14 +27,14 @@ steps:
       - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
 
   - name: 'google/cloud-sdk:latest'
-  entrypoint: 'sh'
-  args:
-  - -xe
-  - -c
-  - |
-    gcloud deploy apply --file deploy/delivery-pipeline.yaml --region=us-central1
-    gcloud deploy apply --file deploy/dev-target.yaml --region=us-central1
-    gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gke-cicd-pipeline --region=us-central1
+    entrypoint: 'sh'
+    args:
+    - -xe
+    - -c
+    - |
+      gcloud deploy apply --file deploy/delivery-pipeline.yaml --region=us-central1
+      gcloud deploy apply --file deploy/dev-target.yaml --region=us-central1
+      gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gke-cicd-pipeline --region=us-central1
 
 timeout: 3600s
 images:
