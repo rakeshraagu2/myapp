@@ -34,6 +34,7 @@ steps:
     - |
       gcloud deploy apply --file delivery-pipeline.yaml --region=us-central1
       gcloud deploy apply --file dev-target.yaml --region=us-central1
+      gcloud deploy apply --file stagin-target.yaml --region=us-central1
       gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gke-cicd-pipeline --region=us-central1
 
 timeout: 3600s
