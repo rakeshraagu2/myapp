@@ -4,7 +4,7 @@ steps:
     args:
       - build
       - '-t'
-      - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
+      - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$SHORT_SHA'
       - '-f'
       - Dockerfile
       - .
@@ -13,7 +13,7 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
+      - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$SHORT_SHA'
 
     # Step 3: Deploy to GKE
   - name: 'gcr.io/cloud-builders/kubectl'
@@ -21,7 +21,7 @@ steps:
       - 'set'
       - 'image'
       - 'deployment/k8s-test1'
-      - 'k8s-test1=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
+      - 'k8s-test1=asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$SHORT_SHA'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
       - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
