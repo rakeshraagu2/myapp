@@ -1,0 +1,9 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: staging
+  annotations: {}
+  labels: {}
+description: staging
+gke:
+  cluster: projects/ivory-nectar-448718-j3/locations/us-central1/clusters/staging
