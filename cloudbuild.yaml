@@ -30,4 +30,15 @@ timeout: 3600s
 images:
   - 'asia-south1-docker.pkg.dev/ivory-nectar-448718-j3/k8s-test/nginx:$COMMIT_SHA'
 
+- name: 'google/cloud-sdk:latest'
+  entrypoint: 'sh'
+  args:
+  - -xe
+  - -c
+  - |
+    gcloud deploy apply --file deploy/delivery-pipeline.yaml --region=us-central1
+    gcloud deploy apply --file deploy/dev-target.yaml --region=us-central1
+    gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gke-cicd-pipeline --region=us-central1
+
+
 logsBucket: 'ci-cd-k8s'
